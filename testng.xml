@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite  name="FREECRM  Automation Test as Per Naveen" >
-<listeners>
-<listener class-name="ExtentReportListener.ExtentReportNG"></listener>
-</listeners>
-  <test name="FreeCRM Test"   preserve-order="true">
-    <classes>
-      <class name="testcases.LoginPageTest"></class>
-      <class name="testcases.HomePageTest"></class>
-      <class name="testcases.ContactPageTest"></class>
-       </classes>
-  </test>
+<suite name="Suite" thread-count="1">
+<listeners> 
+<listener class-name="ExtentReportListener.ExtentReportNG"></listener> 
+</listeners> 
+  <test  name="Test" preserve-order ="true" enabled = "true">
+    <classes> 
+      <class name="testcases.HomePageTest">
+      <methods>
+          <include name="setUp"/>
+           <include name="HomePage_ButtonClicksTest"/>
+           <include name="HomePage_ButtonsClickLinkTest"/>   
+           <include name="HomePage_ButtonsClickLinkTest"/>   
+           <include name="HomePage_PageObjectModelTest"/>       
+           <include name="HomePage_TitleTest"/> 
+           <include name="HomePage_ToDoListTest"/>
+           <include name="tearDown"/>
+      </methods>
+      </class>
+      <class name="testcases.ButtonClicksPageTest">
+       <methods>
+           <include name="setUp"/>
+           <include name="ButtonClicks_HeaderTest"/>
+           <include name="ButtonClicks_WebElementClickTitleTest"/>
+           <include name="ButtonClicks_JavaScriptTitleTest"/>
+           <include name="ButtonClicks_ActionTitleTest"/>
+           <include name="ButtonClicks_WebElementClickTest"/>
+           <include name="ButtonClicks_JSClickTest"/>
+           <include name="ButtonClicks_ActionMoveClickTest"/>    
+           <include name="tearDown"/>
+      </methods>
+      </class>
+      <class name="testcases.ToDoListPageTest">
+      <methods>
+           <include name="setUp"/>
+           <include name="TDL_TitleTest"/>
+           <include name="TDL_AddNewToDoTest"/>
+           <include name="TDL_CompleteaddedItemTest"/>
+           <include name="TDL_DeleteNewToDoTest"/>
+           <include name="ButtonClicks_WebElementClickTest"/>
+           <include name="tearDown"/>
+      </methods>
+      </class>
+    </classes>
+  </test> 
 </suite>

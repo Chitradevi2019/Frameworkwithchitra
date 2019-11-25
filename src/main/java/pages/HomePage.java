@@ -12,16 +12,22 @@ public class HomePage extends BaseTest {
 	
 	// PageFactory -OR 
 
-	    @FindBy(xpath = "//td[contains(text(),'User: Ismat Jahan')]")
-	    WebElement user;
-		@FindBy (xpath = "//a[contains(text(),'Contacts')]")
-		WebElement contactsBtn;
-		@FindBy(xpath = "//td[contains(text(),'New Contact')]")  
-	    WebElement NewContactsLink;
-		@FindBy (xpath = "//a[contains(text(),'Deals')]")
-        WebElement dealsBtn;
-		@FindBy (xpath = "//a[contains(text(),'Tasks')]")
-        WebElement tasksBtn;
+	    @FindBy(xpath = "//h1[text()='CONTACT US']")
+	    WebElement contact_us;
+		@FindBy (xpath = "//h1[text()='LOGIN PORTAL']")
+		WebElement login_portal;
+		@FindBy(xpath = "//h1[text()='BUTTON CLICKS']")  
+	    WebElement button_clicks;
+		@FindBy (xpath = "//h1[text()='TO DO LIST']")
+        WebElement to_do_list;
+		@FindBy (xpath = "//h1[text()='PAGE OBJECT MODEL']")
+        WebElement page_object_model;
+		@FindBy (xpath = "//h1[text()='ACCORDION @TEXT AFFECTS (APPEAR & DISAPPEAR']")
+        WebElement text_affects;
+		@FindBy (xpath = "//h1[text()='DROPDOWN, CHECKBOXE(S) & RADIO BUTTON(S)']")
+        WebElement dropdown;
+		@FindBy (xpath = "//h1[text()='AJAX LOADER']")
+        WebElement ajax_loader;
 		
 		// Initialize Page Objects
 		public HomePage(){ 
@@ -32,31 +38,58 @@ public class HomePage extends BaseTest {
 		public String getHomePageTitle()
 		{return d.getTitle();}  //Method1
 		
-		public  boolean getUserName()// Method2
-		{return user.isDisplayed();}
+		public  boolean contactUsisDisplayed()// Method2
+		{return contact_us.isDisplayed();}
 		
-		public ContactsPage clickContacts() //Method3
-		{ contactsBtn.click();
-		return new ContactsPage();}
+		public  boolean login_PortalisDisplayed()// Method3
+		{return login_portal.isDisplayed();}
 		
+		public  boolean ButtonClicksisDisplayed()// Method4
+		{return button_clicks.isDisplayed();}
 
-		public DealsPage clickDeals() //Method4
-		{ dealsBtn.click();
-		return new DealsPage();}
+		public  ButtonClicksPage clickOnButtonClicks()// Method5
+		{button_clicks.click();
+		return new ButtonClicksPage();}
+
+		public  boolean todolist_isDisplayed()// Method6
+		{return to_do_list.isDisplayed();}
 		
+		public  ToDoListPage clickOnToDoList()// Method7
+		{to_do_list.click();
+		return new ToDoListPage();}
+
+		public  boolean PageObjectModel_isDisplayed()// Method8
+		{return page_object_model.isDisplayed();}
 		
-		public TasksPage clickTasks() //Method5
-		{ tasksBtn.click();
-		return new TasksPage();}
+		public  PageObjectModelPage clickOnPageObjectModel()// Method9
+		{to_do_list.click();
+		return new PageObjectModelPage();}
 		
-		public void clickonNewContactLink()
-		{ Actions act = new Actions(d); 
-		act.moveToElement(contactsBtn).build().perform();
-		NewContactsLink.click();
+		public  boolean Accordion_isDisplayed()// Method10
+		{return text_affects.isDisplayed();}
+		
+		public TextAffectsPage clickOnTextAffects()// Method11
+		{text_affects.click();
+		return new TextAffectsPage();}
+		
+		public  boolean Dropdown_isDisplayed()// Method12
+		{return dropdown.isDisplayed();}
+		
+		public DropdownPage clickOnDropdown()// Method13
+		{dropdown.click();
+		return new DropdownPage();}
+		
+		public  boolean Ajax_isDisplayed()// Method14
+		{return ajax_loader.isDisplayed();}
+		
+		public AjaxLoaderPage clickOnAjaxLoader()// Method15
+		{ajax_loader.click();
+		return new AjaxLoaderPage();}
+		
 		
 		}
 		
-		}
+		
 	
 	
 	

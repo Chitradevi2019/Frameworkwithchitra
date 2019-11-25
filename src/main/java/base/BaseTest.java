@@ -25,7 +25,7 @@ public    BaseTest() //Constructor
 {
 	try {
 		prop=new Properties();
-FileInputStream fis = new FileInputStream("C:\\Users\\Shabbir\\eclipse-workspace\\FreeCRMTest\\src\\main\\java\\config\\config.properties");
+FileInputStream fis = new FileInputStream("C:\\Users\\yaash\\FrameworkWithChitra\\FrameworkWithChitra\\src\\main\\java\\config\\config.properties");
 prop.load(fis);}
    catch (FileNotFoundException e)
 {
